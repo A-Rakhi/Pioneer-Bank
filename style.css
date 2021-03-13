@@ -24,6 +24,9 @@ body{
     border-radius: 10px;
     padding: 20px;
 }
+.d-w-h4{
+    font-family: 'Poppins', sans-serif;
+}
 .deposit{
     background-color: slateblue;
 }
