@@ -17,6 +17,7 @@
 
     <!--- CSS style-->
     <link rel="stylesheet" href="style.css" />
+
     <!--- goggle font-->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
@@ -139,22 +140,16 @@
       const withdrawBtn = document.getElementById("withdraw");
 
       withdrawBtn.addEventListener("click", function () {
-        const withdrawAmountValue = getInputNumber("withdraw-amount");
+        const withdrawAmountValue = document.getElementById("withdraw-amount")
+          .value;
         const withdrawAmount = parseFloat(withdrawAmountValue);
         //console.log(withdrawAmount);
 
         updateAmount("withdraw-current", withdrawAmount);
         updateAmount("balance-Current", -1 * withdrawAmount);
-        
+
         document.getElementById("withdraw-amount").value = "";
-
       });
-
-      function getInputNumber(id) {
-        const amount = document.getElementById(id).value;
-        const amountNumber = parseFloat(amount);
-        return amountNumber;
-      }
 
       function updateAmount(id, depositAmount) {
         const current = document.getElementById(id).innerText;
